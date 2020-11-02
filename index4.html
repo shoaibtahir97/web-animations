@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://raw.githubusercontent.com/MuhammadMohsin/PanacloudBootcamp2020/session_12/images/bg.jpg") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <img id="cloud" src="https://raw.githubusercontent.com/MuhammadMohsin/PanacloudBootcamp2020/session_12/images/cloud1.gif" alt="cloud">
+   
+
+
+
+    <script>
+        var elem = document.querySelector("#cloud");
+
+        var animatedElement = elem.animate([ //Here we have concateneted elem.animate in a variable
+            {transform: 'translate(0,0)'},
+            {transform: 'translate(1300px, 0)'},
+            {transform: 'translate(0, 0px)'}
+        ],{
+            duration: 15000,
+            iterations: Infinity
+        })
+
+        document.addEventListener("mousedown", ()=>{// We have used addEventListener to perform a function on the animatedelement by the help of mouse click
+            animatedElement.pause();//elem.animate function makes the cloud gif movable and EventListner will stop it when user clicks on the louse left click
+        })
+
+        document.addEventListener("mouseup",()=>{
+            animatedElement.play();
+        })
+
+    </script>
+</body>
+</html>

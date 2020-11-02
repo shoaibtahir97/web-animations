@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            background-color: darkorange ;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        var elem = document.querySelector("#box") //Here we are storing the div of id box in elem variable
+
+        elem.animate([ //we have placed animate function to elem variable. This returns two things an array which consists of E-Frames and an object which consist of duration/timings and iterations.
+            {transform: 'translate(0,0'},//transform is a function that has a property of translate which moves an object or in our case box back and forth 
+            {transform: 'translate(800px, 0)'},//the two points are the x and y dimensions in which the object translates or moves you can change its value to increase or decrease the area. 
+            {transform: 'translate(0,0'},
+        ],{
+            duration: 4000, //The duration of its translation is 4 seconds or 4000 milisec
+            iterations: Infinity//iterations is the no. of revolutions, in this case its infinity   
+            
+        })
+    </script>
+</body>
+</html>
